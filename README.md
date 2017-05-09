@@ -15,7 +15,7 @@ prefManager.putString(key, value);
 
 Get preferences by calling:
 ```Java
-String output = prefManager.getString("Parameter", "default string");
+prefManager.getString(key, defaultValue);
 ```
 
 Set your debug tag and show log by calling the static methods:
