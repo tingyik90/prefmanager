@@ -1,20 +1,16 @@
 # PrefManager
-Simple wrapper class for Android `PreferenceManager`, which supports only basic functions. It is always using
-```Java
-PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
+Simple wrapper class for Android `PreferenceManager`, which supports only basic functions using `DefaultSharedPreferences`.
+The main purpose is to remove the need to call
+```Java 
+PreferenceManager pref = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
+Editor editor = pref.edit();
+editor.putString(key, value).commit();
 ```
 
-Set your debug tag and show log by calling:
-```Java
-PrefManager.setDebugTag(String debugTag);
-PrefManager.showLog(true);      // default = false
-```
-
-Save preferences by calling:
+and replace it with 
 ```Java
 PrefManager prefManager = new PrefManager(context);
-String input = "String to save";
-prefManager.putString("Parameter", input);
+prefManager.putString(key, value);
 ```
 
 Get preferences by calling:
@@ -22,7 +18,13 @@ Get preferences by calling:
 String output = prefManager.getString("Parameter", "default string");
 ```
 
-It includes the following type of data:
+Set your debug tag and show log by calling the static methods:
+```Java
+PrefManager.setDebugTag(String debugTag);
+PrefManager.showLog(true);      // default = false
+```
+
+It supports the following data types:
 - String 
 - long
 - int
