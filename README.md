@@ -44,7 +44,7 @@ allprojects {
 In the app Gradle:
 ```Gradle
 dependencies {
-    compile 'com.github.tingyik90:prefmanager:1.0'
+    compile 'com.github.tingyik90:prefmanager:1.1'
 }
 ```
 
